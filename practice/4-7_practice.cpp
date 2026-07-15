@@ -13,10 +13,8 @@ int main(){
     std::cout << "whats your age? ";
     std::cin >> age;
 
-    std::cout << "you are " << age << "years old" << '\n';
+    std::cout << "you are " << age << " years old" << '\n';
     std::cout << "hello " << name;
-
-
 
 
     return 0;

@@ -18,7 +18,6 @@ int main(){
     else if(age < 0){
         std::cout << "you havent been born yet";
     }
-
     else{
         std::cout << "you are not old enough to enter the site";
     }
