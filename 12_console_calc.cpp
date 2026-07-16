@@ -37,7 +37,7 @@ int main(){
             std::cout << "result: " << result << '\n';
             break;
         default:
-            std::cout << "that wasnt a valid response";
+            std::cout << "that wasnt a valid response" << '\n';
             break;
 
     }
