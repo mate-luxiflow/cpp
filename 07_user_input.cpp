@@ -1,14 +1,15 @@
 #include <iostream>
+#include <string>
 
-//cout  << (insertion operator)
-//cin << (extraction operator)
+// cout  << (insertion operator)
+// cin << (extraction operator)
 
-
-int main(){
+int main()
+{
 
     std::string name;
     int age;
-    
+
     std::cout << "whats your age: ";
     std::cin >> age;
 
@@ -21,4 +22,3 @@ int main(){
 
     return 0;
 }
-
