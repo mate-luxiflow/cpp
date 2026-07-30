@@ -1,8 +1,10 @@
 #include <iostream>
+#include <string>
 
 using text_t = std::string;
 
-int main(){
+int main()
+{
 
     text_t name;
     int age;
@@ -15,7 +17,6 @@ int main(){
 
     std::cout << "you are " << age << " years old" << '\n';
     std::cout << "hello " << name;
-
 
     return 0;
 }
