@@ -22,6 +22,9 @@ int main()
         std::cout << "4, exit\n";
         std::cin >> choice;
 
+        std::cin.clear();
+        fflush(stdin);
+
         switch (choice)
         {
         case 1:
@@ -79,8 +82,17 @@ double withdraw(double balance)
 
     if (amount > balance)
     {
-        std::cout << "insufficient funds";
+        std::cout << "insufficient funds\n";
         return 0;
+    }
+    else if (amount < 0)
+    {
+        std::cout << "thats not a valid amount\n";
+        return 0;
+    }
+    else
+    {
+        return amount;
     }
 
     return amount;
