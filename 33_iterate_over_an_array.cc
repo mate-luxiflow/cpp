@@ -17,5 +17,14 @@ int main()
         std::cout << grades[i] << '\n';
     }
 
+    // bit of practice
+
+    int num[] = {1, 3, 4, 6};
+
+    for (int k = 0; k < sizeof(num) / sizeof(num[0]); k++)
+    {
+        std::cout << num[k] << '\n';
+    }
+
     return 0;
 }
