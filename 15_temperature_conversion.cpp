@@ -33,6 +33,5 @@ int main()
         std::cout << "please enter only C or F\n";
     }
 
-    std::cout << "******************************\n";
     return 0;
 }

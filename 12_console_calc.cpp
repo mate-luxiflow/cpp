@@ -1,14 +1,13 @@
 #include <iostream>
 #include <cmath>
 
-int main(){
+int main()
+{
 
     char op;
     double num1;
     double num2;
     double result;
-
-    std::cout << "----------------------------CALC--------------------------------" << '\n';
 
     std::cout << "enter either (+ - * /): ";
     std::cin >> op;
@@ -19,30 +18,28 @@ int main(){
     std::cout << "enter number 2: ";
     std::cin >> num2;
 
-    switch(op){
-        case '+':
-            result = num1 + num2;
-            std::cout << "result: " << result << '\n';
-            break;
-        case '-':
-            result = num1 - num2;
-            std::cout << "result: " << result <<'\n';
-            break;
-        case '*':
-            result = num1 * num2;
-            std::cout << "result: " << result << '\n';
-            break;
-        case '/':
-            result = num1 / num2;
-            std::cout << "result: " << result << '\n';
-            break;
-        default:
-            std::cout << "that wasnt a valid response" << '\n';
-            break;
-
+    switch (op)
+    {
+    case '+':
+        result = num1 + num2;
+        std::cout << "result: " << result << '\n';
+        break;
+    case '-':
+        result = num1 - num2;
+        std::cout << "result: " << result << '\n';
+        break;
+    case '*':
+        result = num1 * num2;
+        std::cout << "result: " << result << '\n';
+        break;
+    case '/':
+        result = num1 / num2;
+        std::cout << "result: " << result << '\n';
+        break;
+    default:
+        std::cout << "that wasnt a valid response" << '\n';
+        break;
     }
-
-    std::cout << "------------------------------------------------------------";
 
     return 0;
 }
