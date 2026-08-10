@@ -13,7 +13,7 @@ int main()
 
     num = (rand() % 100) + 1;
 
-    std::cout << "***********game*********\n";
+    std::cout << "game\n";
 
     do
     {
@@ -36,7 +36,7 @@ int main()
 
     } while (guess != num);
 
-    std::cout << "********************number guessing game********************";
+    std::cout << "number guessing game";
 
     return 0;
 }
