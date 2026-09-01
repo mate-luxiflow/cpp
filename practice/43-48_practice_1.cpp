@@ -12,13 +12,13 @@ int main()
     int score = 10;
 
     doubleVal(score);
-    cout << "after doubleval: " << score << '\n';
+    cout << "after doubleVal: " << score << '\n';
 
     doubleRef(score);
-    cout << "after doubleref: " << score << '\n';
+    cout << "after doubleRef: " << score << '\n';
 
     doublePtr(&score);
-    cout << "after doubleptr: " << score << '\n';
+    cout << "after doublePtr: " << score << '\n';
 
     return 0;
 }
