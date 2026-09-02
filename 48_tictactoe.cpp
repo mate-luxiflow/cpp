@@ -84,7 +84,7 @@ void computerMove(char *spaces, char computer)
     while (true)
     {
         number = rand() % 9;
-        if (spaces[number == ' '])
+        if (spaces[number] == ' ')
         {
             spaces[number] = computer;
             break;
