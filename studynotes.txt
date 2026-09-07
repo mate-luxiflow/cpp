@@ -1,0 +1,331 @@
+═══════════════════════════════════════════════════════════════
+                    C++ STUDY GUIDE
+            Based on mate-luxiflow/cpp workspace
+═══════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────┐
+│ 1. TOPIC BREAKDOWN & CHEAT SHEET                          │
+└─────────────────────────────────────────────────────────────┘
+
+📌 VARIABLES & DATA TYPES (01_variables_datatypes.cpp)
+─────────────────────────────────────────────────────────────
+int     = whole numbers          (int age = 16;)
+double  = decimal numbers        (double price = 10.99;)
+char    = single character       (char grade = 'A';)
+bool    = true/false             (bool student = true;)
+string  = text sequence          (std::string name = "mate";)
+
+📌 CONST KEYWORD (02_const.cpp)
+─────────────────────────────────────────────────────────────
+// Makes a variable read-only — compiler prevents modification
+const double PI = 3.14159;
+const int WIDTH = 1920;
+
+📌 NAMESPACES (03_namespaces.cpp)
+─────────────────────────────────────────────────────────────
+// Prevents name conflicts in large projects
+namespace first { int x = 1; }
+namespace second { int x = 2; }
+// Usage: first::x  or  second::x
+
+📌 TYPEDEF / USING ALIASES (04_typedef.cpp)
+─────────────────────────────────────────────────────────────
+// Creates an alias for a data type (improves readability)
+using text_t = std::string;
+using number_t = int;
+text_t name = "Mate";
+
+📌 ARITHMETIC OPERATORS (05_arithmetic_operators.cpp)
+─────────────────────────────────────────────────────────────
++   addition
+-   subtraction
+*   multiplication
+/   division
+%   modulus (remainder)
+// Shorthand: +=, -=, *=, /=
+// Increment/Decrement: ++, --
+
+📌 TYPE CONVERSION (06_type_conversion.cpp)
+─────────────────────────────────────────────────────────────
+// Implicit: automatic conversion
+// Explicit: manual with (type) or static_cast
+int x = (int)3.14;           // x = 3
+double score = correct / (double)total * 100;
+
+📌 USER INPUT (07_user_input.cpp)
+─────────────────────────────────────────────────────────────
+std::cin >> variable;                 // basic input
+std::getline(std::cin, stringVar);    // full line with spaces
+std::getline(std::cin >> std::ws, name); // clears leading whitespace
+
+📌 MATH FUNCTIONS (08_useful_math_func.cpp)
+─────────────────────────────────────────────────────────────
+#include <cmath>
+std::max(x,y)   std::min(x,y)   std::pow(2,3)
+std::sqrt(9)    std::abs(-3)    std::round(3.14)
+std::ceil(3.14) std::floor(3.14)
+
+📌 IF STATEMENTS (10_if_statements.cpp)
+─────────────────────────────────────────────────────────────
+if (condition) {
+    // runs if true
+} else if (otherCondition) {
+    // runs if first false and this true
+} else {
+    // runs if all false
+}
+
+📌 SWITCH STATEMENTS (11_switches_Grade.cpp)
+─────────────────────────────────────────────────────────────
+switch(variable) {
+    case 'A': std::cout << "Great!"; break;
+    case 'B': std::cout << "Good"; break;
+    default: std::cout << "Invalid";
+}
+
+📌 TERNARY OPERATOR (13_ternary_operator.cpp)
+─────────────────────────────────────────────────────────────
+// condition ? expression1 : expression2
+std::cout << (hungry ? "hungry" : "full");
+
+📌 LOGICAL OPERATORS (14_logical_operators.cpp)
+─────────────────────────────────────────────────────────────
+&&   AND — both must be true
+||   OR  — at least one must be true
+!    NOT — reverses boolean
+
+📌 STRING METHODS (16_string_methods.cpp)
+─────────────────────────────────────────────────────────────
+string.length()      // returns length
+string.empty()       // returns true if empty
+string.clear()       // empties the string
+string.append("@gmail.com")  // adds to end
+string.at(0)         // character at index
+string.find(' ')     // finds first occurrence
+string.erase(0, 3)   // removes characters
+string.insert(0, "@") // inserts at position
+
+📌 LOOPS
+─────────────────────────────────────────────────────────────
+// WHILE — checks condition FIRST
+while (condition) { /* code */ }
+
+// DO-WHILE — runs code FIRST, then checks condition
+do { /* code */ } while (condition);
+
+// FOR — initialize; condition; increment
+for (int i = 0; i <= 10; i++) { /* code */ }
+
+// BREAK — exits loop immediately
+// CONTINUE — skips current iteration
+
+📌 RANDOM NUMBER GENERATION (22_ran_num_gen.cpp)
+─────────────────────────────────────────────────────────────
+#include <cstdlib>  // for rand(), srand()
+#include <ctime>    // for time()
+srand(time(NULL));
+int num = (rand() % 6) + 1;  // 1 to 6
+
+📌 FUNCTIONS (25_user_defined_func.cpp)
+─────────────────────────────────────────────────────────────
+// Declaration (prototype)
+void happybday(std::string name, int age);
+
+// Definition
+void happybday(std::string name, int age) {
+    std::cout << "Happy birthday " << name;
+}
+
+📌 RETURN KEYWORD (26_return_keyword.cpp)
+─────────────────────────────────────────────────────────────
+// Returns a value from a function
+int add(int a, int b) {
+    return a + b;
+}
+
+📌 FUNCTION OVERLOADING (27_overloaded_functions.cpp)
+─────────────────────────────────────────────────────────────
+// Multiple functions with SAME name, DIFFERENT parameters
+int max(int a, int b) { return (a > b) ? a : b; }
+double max(double a, double b) { return (a > b) ? a : b; }
+
+📌 VARIABLE SCOPE (28_variable_scope.cpp)
+─────────────────────────────────────────────────────────────
+// Local: declared inside a function/block {}
+// Global: declared outside all functions
+// Use :: to access global variable when shadowed
+int globalVar = 3;
+void func() {
+    int localVar = 2;
+    std::cout << ::globalVar;  // accesses global
+}
+
+📌 ARRAYS (31_arrays.cc)
+─────────────────────────────────────────────────────────────
+// Declaration with size
+std::string cars[3];
+cars[0] = "Camaro";
+cars[1] = "Mustang";
+
+// Declaration with initialization
+double prices[] = {5.00, 7.50, 9.99};
+
+📌 SIZEOF OPERATOR (32_sizeof_operator.cc)
+─────────────────────────────────────────────────────────────
+sizeof(variable)   // returns size in bytes
+sizeof(array) / sizeof(array[0])  // gets array length
+
+📌 ITERATING OVER ARRAYS (33_iterate_over_an_array.cc)
+─────────────────────────────────────────────────────────────
+for (int i = 0; i < arraySize; i++) {
+    std::cout << array[i];
+}
+
+// Range-based for loop (C++11)
+for (int num : numbers) {
+    std::cout << num;
+}
+
+📌 PASSING ARRAYS TO FUNCTIONS (35_pass_array_to_a_func.cc)
+─────────────────────────────────────────────────────────────
+// Arrays decay to pointers when passed
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) { ... }
+}
+
+📌 MULTIDIMENSIONAL ARRAYS (40_multidimensional_array.cc)
+─────────────────────────────────────────────────────────────
+int matrix[2][3] = { {1,2,3}, {4,5,6} };
+// Access: matrix[row][col]
+
+📌 MEMORY ADDRESSES (42_memory_addresses.cc)
+─────────────────────────────────────────────────────────────
+// & operator gets the memory address of a variable
+std::string name = "Mate";
+std::cout << &name;   // prints memory address
+
+📌 PASS BY VALUE vs PASS BY REFERENCE (43_pass_by_VALUE-REFERENCE.cc)
+─────────────────────────────────────────────────────────────
+// Pass by VALUE: creates a copy (original unchanged)
+void func(int x) { x = 10; }  // original unchanged
+
+// Pass by REFERENCE: uses original (&)
+void swap(std::string &x, std::string &y) {
+    std::string temp = x;
+    x = y;
+    y = temp;
+}
+
+📌 CONST PARAMETERS (44_const_parameters.cc)
+─────────────────────────────────────────────────────────────
+// Makes parameter read-only — protects against accidental modification
+void printInfo(const std::string name, const int age) {
+    // name = "new";  // ERROR! cannot modify
+    std::cout << name << age;
+}
+
+📌 POINTERS (46_pointers.cc)
+─────────────────────────────────────────────────────────────
+// Pointer = variable that stores a memory address
+// & = address-of operator
+// * = dereference operator (access value at address)
+
+std::string name = "Mate";
+std::string *pName = &name;   // pName stores address of name
+std::cout << *pName;          // prints "Mate" (dereference)
+
+📌 NULL POINTERS (47_nullpointers.cpp)
+─────────────────────────────────────────────────────────────
+// Pointer that points to nothing (safe to check)
+int *ptr = nullptr;
+if (ptr != nullptr) {
+    // safe to dereference
+}
+
+📌 DYNAMIC MEMORY (49_dynamic_memory.cpp)
+─────────────────────────────────────────────────────────────
+// Allocate memory on the heap with 'new'
+int *arr = new int[10];
+// Don't forget to delete!
+delete[] arr;
+
+📌 RECURSION (50_recursion.cpp)
+─────────────────────────────────────────────────────────────
+// Function that calls itself
+// Must have a base case to stop
+int factorial(int n) {
+    if (n <= 1) return 1;      // base case
+    return n * factorial(n-1); // recursive call
+}
+
+┌─────────────────────────────────────────────────────────────┐
+│ 2. COMMON PITFALLS                                        │
+└─────────────────────────────────────────────────────────────┘
+
+⚠️ 1. Forgetting #include <string> when using std::string
+⚠️ 2. Using = instead of == in conditionals (assignment vs comparison)
+⚠️ 3. Off-by-one errors in loops (i <= size vs i < size)
+⚠️ 4. Forgetting break in switch statements (fall-through)
+⚠️ 5. Mixing up pass-by-value and pass-by-reference
+⚠️ 6. Using uninitialized variables (they contain garbage values)
+⚠️ 7. Forgetting to delete dynamically allocated memory (memory leak)
+⚠️ 8. Dereferencing null or uninitialized pointers (crash)
+⚠️ 9. Array index out of bounds (undefined behavior)
+⚠️ 10. Integer division truncating (use double cast for decimals)
+⚠️ 11. Using & instead of && or vice versa (bitwise vs logical)
+⚠️ 12. Shadowing global variables with local ones (use :: to access global)
+
+┌─────────────────────────────────────────────────────────────┐
+│ 3. STUDY & SELF-TEST QUESTIONS (15)                       │
+└─────────────────────────────────────────────────────────────┘
+
+A. CONCEPTUAL/SYNTAX QUESTIONS (10)
+
+Q1: What is the difference between pass-by-value and pass-by-reference?
+Q2: What does the 'const' keyword do when used with a parameter?
+Q3: What is a pointer and how do you access the value it points to?
+Q4: What is the difference between a while loop and a do-while loop?
+Q5: How do you get the size of an array in C++?
+Q6: What is function overloading and when would you use it?
+Q7: What is the difference between local and global variables?
+Q8: What does the 'break' statement do? What does 'continue' do?
+Q9: What is the ternary operator and how is it used?
+Q10: What is the difference between `int` and `double`?
+
+B. "WHAT IS THE OUTPUT?" CODE SNIPPETS (5)
+
+Q11:
+```cpp
+int x = 5;
+int y = 2;
+double result = x / y;
+std::cout << result;
+
+
+int arr[] = {1, 2, 3, 4};
+std::cout << arr[2];
+
+int arr[] = {1, 2, 3, 4};
+std::cout << arr[2];
+
+
+int num = 7;
+if (num % 2 == 0) {
+    std::cout << "even";
+} else {
+    std::cout << "odd";📖 What to do next:
+}
+
+
+int a = 10;
+int &ref = a;
+ref = 20;
+std::cout << a;📖 What to do next:
+
+
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 2; j++) {
+        std::cout << "*";
+    }
+    std::cout << "\n";
+}
