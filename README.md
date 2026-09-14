@@ -1,4 +1,4 @@
-# 🌿 The C++ Jungle Journal
+# The C++ Jungle Journal
 
 Welcome to my raw journey through the wild world of C++.
 
